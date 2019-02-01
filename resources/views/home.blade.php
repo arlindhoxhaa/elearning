@@ -1,8 +1,9 @@
+
 @extends('layouts.template')
 
 
 @section('content')
-<div class="container">
+
     <div id="carouselExampleIndicators" class="carousel slide customSlide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -42,12 +43,13 @@
         </a>
     </div><br>
     <div class="row">
-        <h3 class="col-md-8">Today Class's</h3>
-        <h3 class="col-md-4">Activity & Overview</h3>
+        <h3 class="col-md-8"></h3>
+        <h3 class="col-md-4"></h3>
     </div>
     <br>
     <div class="row">
         <div class="col-md-8">
+           <h3>Today Class's</h3>
             <table class="table">
                 <thead>
                     <tr>
@@ -90,6 +92,14 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="col-md-4 activityOveriew">
+           <div class="aoHead">
+            <h3>Activity & Overview</h3>  
+           </div>
+           <div class="aoBody">
+               
+           </div>
         </div>
     </div><br>
     <h3>Courses</h3><br>
@@ -149,5 +159,4 @@
         </div>
     </div>
 
-</div>
 @endsection
