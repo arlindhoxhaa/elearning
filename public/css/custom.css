@@ -22,3 +22,31 @@
         background: #000;
     }
 }
+.nav-sidebar li {
+    display: block;
+    width: 100%;
+    margin: .2 em 0;
+}
+
+.card-deck{
+    width: 170%;
+    margin-top: 3.0em;
+    margin-left: -90px;
+}
+
+.card-img-top{
+    width: 12%;
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+    display:inline-block
+}
+
+.card-title{
+    display: inline-block;
+}
+
+.h5{
+    display: inline-block;
+}
+
+
