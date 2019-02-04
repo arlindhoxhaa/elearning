@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+//test
 
 Auth::routes();
 
