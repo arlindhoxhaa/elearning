@@ -16,9 +16,9 @@
                 <div class="row">
                     <div class="col-md-5">
                         <h4>Contacts details</h4>
-                        <p>0124 567890 <br>
-                        email@host.com <br>
-                        Boston Street, New York City</p>
+                        <p>+381 38 541 400<br>
+                        info@ubt-uni.net <br>
+                        Kalabria,Prishtine</p>
                         <p><b>Sign up for our Newsletter</b></p>
                         <form action="">
                             <input type="email" placeholder="Email Address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>

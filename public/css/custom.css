@@ -52,3 +52,18 @@
     text-align: right;
     float: right;
 }
+.tpFooter p{
+    font-size: 12px;
+    font-style: initial;
+}
+user-details-section{
+    display: inline-block;
+}
+.download-lecture{
+    width: auto;
+    display: inline-block;
+}
+
+.video-lecture-pic{
+    padding-left: 2.5em;
+}
