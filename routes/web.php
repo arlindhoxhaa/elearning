@@ -21,4 +21,5 @@ Route::get('/courses', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/course/{course}', 'CoursesController@show')->name('course.show');
 Route::resource('users','UserController');
