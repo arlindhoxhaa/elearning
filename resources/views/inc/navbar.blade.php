@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -14,9 +16,9 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        @foreach ($courses as $course)
+                        <a class="dropdown-item" href="{{ url('course/'.$course->id) }}">{{ $course->name }}</a>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item">
@@ -27,19 +29,6 @@
                 </li>
             </ul>
             <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
-            <!--
-<ul class="nav navbar-nav navbar-right">
-<li class="nav-item dropdown active">
-<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Filan Fisteku</a>
-<div class="dropdown-menu" aria-labelledby="dropdown01">
-<a class="dropdown-item" href="#">Profile</a>
-<a class="dropdown-item" href="#">Grades</a>
-<a class="dropdown-item" href="#">Messages</a>
-<a class="dropdown-item" href="#">Logout</a>
-</div>
-</li>
-</ul>
--->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -58,6 +47,9 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @can('isAdmin')
+                        <a class="dropdown-item" href="adminpanel">Admin Panel</a>
+                        @endcan
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">

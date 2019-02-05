@@ -24,31 +24,42 @@
             <li><a href="">Modules</a></li>
             <li><a href="">Conference</a></li>
             <li><a href="">Collaborations</a></li>
-          </ul>
-
-          <div class="card-deck">
-            <div class="card">
-              <img class="card-img-top" src="images\man-user (1).png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Krenare Pireva</h5>
-                <p class="card-text">Joining Date <br><br> Department <br><br> Category <br><br> E-Mail <br><br> </p>
+          </ul><br><br>
+          <div class="teacherProfile">
+              <div class="tpHeader">
+                  <img src="{{asset("images/man-user (1).png")}}" alt="Edmond Jahjaga" style="width:40px;">
+                  <h5>Edmond <br><b>Jahjaga</b></h5>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">Active 1h ago</small>
+              <div class="tpBody"><br><br>
+                  <ul>
+                      <li><span>Joining Date</span><div>24 August</div></li>
+                      <li><span>Departament</span><div>CSE</div></li>
+                      <li><span>Category</span><div>Teaching staff</div></li>
+                      <li><span>Email</span><div>-</div></li>
+                      <li><span>Status</span><div>Active</div></li>
+                      <li><span>Qualification</span><div>Phd</div></li>
+                  </ul>
               </div>
-            </div>
+              <div class="tpFooter">
+                  <p>Last Active: 1h ago</p>
+              </div>
           </div>
         </div>
-        <div class="col-md-10 main">
+          <div class="col-md-10 main">
           <div class="card">
-            <h5 class="card-header">Curriculum</h5>
+            <h5 class="card-header">{{ $course->name }}</h5>
             <div class="card-body">
               <div class="card">
                 <h5 class="card-header">Section 1 - Requirements Elicitation</h5>
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <div class="download-lecture">
+                  <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
+                  <a href="www.google.com">Download Lecture(PDF)</a>
+                    <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
+                    <a href="www.google.com">Download Lecture(.MP4)</a>
+                </div>
                 </div>
               </div><br>
               <div class="card">
@@ -56,7 +67,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <div class="download-lecture">
+                      <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
+                      <a href="www.google.com">Download Lecture(PDF)</a>
+                        <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
+                        <a href="www.google.com">Download Lecture(.MP4)</a>
+                    </div>
                 </div>
               </div><br>
               <div class="card">
@@ -64,7 +80,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>
                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <div class="download-lecture">
+                      <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
+                      <a href="www.google.com">Download Lecture(PDF)</a>
+                        <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
+                        <a href="www.google.com">Download Lecture(.MP4)</a>
+                    </div>
                 </div>
               </div>
             </div>
