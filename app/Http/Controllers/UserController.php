@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Role;
 use App\User;
 use Session;
+use Hash;
 
 class UserController extends Controller
 {
@@ -48,7 +49,8 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        //$user->password = $request->input('password');
+        $user->password = Hash::make($request['password']);
         $user->role_id = $request->input('role');
         $user->save();
 

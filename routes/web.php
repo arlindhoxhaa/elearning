@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 Route::get('/courses', function () {
     return view('courses');
-});
+}); 
 //test
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('users','UserController');
+
