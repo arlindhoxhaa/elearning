@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home')->middleware('auth');
+// });
 Route::get('/courses', function () {
     return view('courses');
 }); 
-//test
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/course/{course}', 'CoursesController@show')->name('course.show');
-Route::resource('users','UserController');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('courses/create','CoursesController@create')->name('courses.create')->middleware('auth');
+Route::post('courses','CoursesController@store')->name('courses.store')->middleware('auth');
+Route::get('/course/{course}', 'CoursesController@show')->name('course.show')->middleware('auth');
+Route::resource('users','UserController')->middleware('auth');
+Route::resource('subjects','SubjectController');
 

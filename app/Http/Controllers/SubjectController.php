@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Courses; 
-use App\User;
 use App\Subject;
 
-class CoursesController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Courses::all();
-        return view('inc.navbar', compact('courses')); 
+        
     }
 
     /**
@@ -27,8 +24,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        $profesors = User::where('role_id',2)->get();
-        return view('courses.create')->with('profesors',$profesors);
+        //
     }
 
     /**
@@ -39,19 +35,7 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required|min:3',
-            'description'=>'required|min:5'
-        ]);
-
-        $course = new Courses();
-        $course->name = $request->input('name');
-        $course->description = $request->input('description');
-        $course->tutor_id = $request->input('profesori');
-
-        $course->save();
-        return redirect()->route('home');
-        
+        //
     }
 
     /**
@@ -62,9 +46,7 @@ class CoursesController extends Controller
      */
     public function show($id)
     {
-        $course = Courses::where('id', $id)->firstOrFail();
-        $subjects = Subject::all();
-        return view('courses')->with('course',$course)->with('subjects',$subjects);
+        
     }
 
     /**
@@ -75,7 +57,8 @@ class CoursesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subject = Subject::find($id);
+       return view('subjects.edit',compact('subject'));
     }
 
     /**
@@ -87,7 +70,18 @@ class CoursesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $subject = Subject::find($id);
+
+        $request->validate([
+            'title'=>'required|min:3',
+            'description'=>'required'
+        ]);
+        
+        $subject->title  = $request->input('title');
+        $subject->description  = $request->input('description');
+        $subject->save();
+
+        return redirect()->route('home');
     }
 
     /**

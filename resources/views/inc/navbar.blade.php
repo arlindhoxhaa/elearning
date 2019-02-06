@@ -16,11 +16,13 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="{{ route('courses.create') }}">Create course</a>
                         @foreach ($courses as $course)
                         <a class="dropdown-item" href="{{ url('course/'.$course->id) }}">{{ $course->name }}</a>
                         @endforeach
                     </div>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <img src="{{asset("images/dotIcon.png")}}" width="20" height="20" class="d-inline-block align-top" alt="">
@@ -53,7 +55,7 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            {{ __('Logout') }} 
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
