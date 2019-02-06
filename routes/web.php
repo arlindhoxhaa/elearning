@@ -23,5 +23,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/course/{course}', 'CoursesController@show')->name('course.show');
+Route::get('/course/{course_id}/{student_id}', 'EnrollmentsController@show')->name('enrollments.show')->middleware('auth');
+Route::get('/enroll/{course_id}/{student_id}', 'EnrollmentsController@store')->name('enrollments.store')->middleware('auth');
 Route::resource('users','UserController');
-

@@ -17,7 +17,12 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         @foreach ($courses as $course)
-                        <a class="dropdown-item" href="{{ url('course/'.$course->id) }}">{{ $course->name }}</a>
+                        @auth
+                            <a class="dropdown-item" href="{{ url('course/'.$course->id) }}/{{ Auth::user()->id }}">{{ $course->name }}</a>
+                        @endauth
+                        @guest
+                            <a class="dropdown-item" href="{{ url('course/'.$course->id) }}">{{ $course->name }}</a>
+                        @endguest
                         @endforeach
                     </div>
                 </li>

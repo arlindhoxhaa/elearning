@@ -67,3 +67,19 @@ user-details-section{
 .video-lecture-pic{
     padding-left: 2.5em;
 }
+.disableContent {
+     user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.enrollModel {
+    position: absolute;
+  top: 40%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -100px;
+}

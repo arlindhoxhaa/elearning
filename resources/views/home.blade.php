@@ -1,4 +1,3 @@
-
 @extends('layouts.template')
 @section('content')
 <div id="carouselExampleIndicators" class="carousel slide customSlide" data-ride="carousel">
