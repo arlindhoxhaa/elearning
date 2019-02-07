@@ -2,12 +2,14 @@
 @extends('layouts.template')
 
 @section('content')
+@auth
 @if(Request::segment(3) != ($userId =Auth::user()->id))
 @php
 $url = route('enrollments.show', ['course_id' => $course->id, 'student_id' => $userId]);
 @endphp
 <script>window.location.href = "@php echo $url @endphp";</script>
 @endif
+@endauth
 @if(isset($course) & isset($enroll))
 <br>
 <div class="row">
