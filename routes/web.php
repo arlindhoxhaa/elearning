@@ -35,3 +35,7 @@ Route::post('courses','CoursesController@store')->name('courses.store')->middlew
 //Route::resource('users','UserController')->middleware('auth');
 Route::resource('subjects','SubjectController');
 
+
+Route::get('/uploadfile','UploadFileController@');
+Route::post('/uploadfile','UploadFileController@');
+
