@@ -61,8 +61,8 @@ $url = route('enrollments.show', ['course_id' => $course->id, 'student_id' => $u
                 <div class="card">
                     <h5 class="card-header">{{$subject->title}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">{{$subject->description}}</p>
+                        
                         <div class="download-lecture">
                             <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
                             <a href="www.google.com">Download Lecture(PDF)</a>
