@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subject;
 
+
 class SubjectController extends Controller
 {
     /**
@@ -70,7 +71,9 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $subject = Subject::find($id);
+
 
         $request->validate([
             'title'=>'required|min:3',
@@ -81,7 +84,9 @@ class SubjectController extends Controller
         $subject->description  = $request->input('description');
         $subject->save();
 
-        return redirect()->route('home');
+        
+
+        return redirect()->route('home'); 
     }
 
     /**

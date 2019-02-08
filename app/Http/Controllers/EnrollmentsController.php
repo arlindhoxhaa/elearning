@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Enrollments;
 use App\Courses;
+use App\Subject;
 
 class EnrollmentsController extends Controller
 {
@@ -16,8 +17,10 @@ class EnrollmentsController extends Controller
     {
         $enroll = Enrollments::where('course_id', $course_id)->where('student_id', $student_id)->first();
         $course = Courses::where('id', $course_id)->firstOrFail();
+        $subjects = Subject::all();
         if($enroll){
-            return view('courses')->with('course',$course)->with('enroll', $enroll);
+            
+            return view('courses')->with('course',$course)->with('enroll', $enroll)->with('subjects',$subjects);
             //return view('courses')->with('enroll',$enroll);
         }else {
             return view('courses')->with('course',$course);

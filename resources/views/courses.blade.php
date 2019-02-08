@@ -57,45 +57,23 @@ $url = route('enrollments.show', ['course_id' => $course->id, 'student_id' => $u
         <div class="card">
             <h5 class="card-header">{{ $course->name }}</h5>
             <div class="card-body">
+                @foreach ($subjects as $subject)
                 <div class="card">
-                    <h5 class="card-header">Section 1 - Requirements Elicitation</h5>
+                    <h5 class="card-header">{{$subject->title}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="download-lecture">
-                            <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
-                            <a href="www.google.com">Download Lecture(PDF)</a>
-                            <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
-                            <a href="www.google.com">Download Lecture(.MP4)</a>
-                        </div>
+                      
+                      <p class="card-text">{{$subject->description}}</p>
+                      <div class="download-lecture">
+                      <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
+                      <a href="www.google.com">Download Lecture(PDF)</a>
+                        <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
+                        <a href="www.google.com">Download Lecture(.MP4)</a>
                     </div>
-                </div><br>
-                <div class="card">
-                    <h5 class="card-header">Section 2 - Design Phase</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="download-lecture">
-                            <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
-                            <a href="www.google.com">Download Lecture(PDF)</a>
-                            <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
-                            <a href="www.google.com">Download Lecture(.MP4)</a>
-                        </div>
+                    
                     </div>
-                </div><br>
-                <div class="card">
-                    <h5 class="card-header">Section 3 - Prototyping</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <div class="download-lecture">
-                            <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
-                            <a href="www.google.com">Download Lecture(PDF)</a>
-                            <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
-                            <a href="www.google.com">Download Lecture(.MP4)</a>
-                        </div>
-                    </div>
-                </div>
+                    <a href="{{route('subjects.edit',$subject->id)}}" class="btn btn-secondary">EDIT</a>
+                  </div><br>
+                @endforeach
             </div>
         </div>
     </div>

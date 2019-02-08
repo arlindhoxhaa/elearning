@@ -1,5 +1,8 @@
 @extends('layouts.template')
 
+@section('content')
+<br>
+
 <div class="container">
     <br>
     <h1>Create a course</h1>
@@ -29,3 +32,5 @@
     </div>
 <br>
 </div>
+    
+@endsection
