@@ -61,13 +61,43 @@ $url = route('enrollments.show', ['course_id' => $course->id, 'student_id' => $u
                 <div class="card">
                     <h5 class="card-header">{{$subject->title}}</h5>
                     <div class="card-body">
-                      
-                      <p class="card-text">{{$subject->description}}</p>
-                      <div class="download-lecture">
-                      <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
-                      <a href="www.google.com">Download Lecture(PDF)</a>
-                        <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
-                        <a href="www.google.com">Download Lecture(.MP4)</a>
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="download-lecture">
+                            <img class="pdf-icon" src="{{asset('images/pdf.png')}}" alt="PDF Image Cap">
+                            <a href="www.google.com">Download Lecture(PDF)</a>
+                            <img class="video-lecture-pic" src="{{asset('images/play-button.png')}}" alt="MP4 Video Cap">
+                            <a href="www.google.com">Download Lecture(.MP4)</a>
+                        
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Upload File
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Upload Box</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                                <form action="{{URL::previous()}}" enctype="multipart/form-data" method="post">
+                                                    <span><i class="fas fa-upload ml-3" aria-hidden="true"></i></span>
+                                                    <input type="file" name="file">
+                                                
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </form>
+                        </div>
                     </div>
                     
                     </div>
@@ -127,7 +157,7 @@ $url = route('enrollments.show', ['course_id' => $course->id, 'student_id' => $u
                 <h5 class="card-header">{{ $course->name }}</h5>
                 <div class="card-body">
                     <div class="card">
-                        <h5 class="card-header">Section 1 - Requirements Elicitation</h5>
+                        <div class="card-header">Section 1 - Requirements Elicitation</h5>
                         <div class="card-body">
                             <h5 class="card-title">Special title treatment</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
