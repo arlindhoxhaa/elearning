@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.template')
 
 @section('content')
     
@@ -25,7 +25,7 @@
                         </select>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Create">
-                </form>
+                </form> 
             </div>
         </div>
     </div>
